@@ -11,5 +11,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        initAdapter()
+    }
+    private fun initAdapter() {
+        val adapter = Adapter()
+        val sudamerica = PaisSudan.getPaisSudan()
+        adapter.setData(sudamerica)
+        binding.rVpaises.adapter=adapter
+
     }
 }
