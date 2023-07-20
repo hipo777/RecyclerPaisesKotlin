@@ -9,10 +9,10 @@
     <TextView
         android:id="@+id/tVpaisSeleccionado"
         android:layout_width="0dp"
-        android:layout_height="30dp"
+        android:layout_height="60dp"
         android:gravity="center"
         android:text="Pais seleccionado"
-        android:textSize="25sp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -26,11 +26,12 @@
         android:id="@+id/rVpaises"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tVpaisSeleccionado"/>
+        app:layout_constraintTop_toBottomOf="@+id/tVpaisSeleccionado" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

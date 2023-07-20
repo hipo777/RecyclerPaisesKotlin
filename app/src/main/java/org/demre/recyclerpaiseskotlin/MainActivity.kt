@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import org.demre.recyclerpaiseskotlin.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), Adapter.PaisCallback {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,9 +16,15 @@ class MainActivity : AppCompatActivity() {
     }
     private fun initAdapter() {
         val adapter = Adapter()
-        val sudamerica = PaisSudan.getPaisSudan()
-        adapter.setData(sudamerica)
-        binding.rVpaises.adapter=adapter
+        adapter.setData(PaisSudan.paises)
+        adapter.callback = this
+        binding.rVpaises.adapter= adapter
+
+
+    }
+
+    override fun showCountry(texto: String) {
+        binding.tVpaisSeleccionado.text = texto
 
     }
 }
